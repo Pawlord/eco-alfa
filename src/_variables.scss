@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+//Тени
+$shadow-standart: 0 0 7px rgba(0, 0, 0, 0.5);
+$shadow-low: 0 0px 2px rgba(0, 0, 0, 0.5);
+
+//Шрифты и размер
+$family-s: Arial, Helvetica, sans-serif;
+$family-rubik: 'Rubik';
+$family-mont: 'Montserrat';
+
+@mixin family($family: 'Montserrat', $font-size: 16px, $font-weight: 500, $letter-space: 0.7px) {
+    font-family: $family;
+    font-size: $font-size;
+    font-weight: $font-weight;
+    letter-spacing: $letter-space;
+}

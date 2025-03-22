@@ -1,0 +1,43 @@
+@use './variables' as v;
+
+.header {
+    padding: 15px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    &__filters {
+        display: flex;
+        align-items: center;
+        gap: 1.2rem;
+
+        .filter {
+            border: 1px solid #eee;
+            border-radius: 10px;
+            outline: none;
+            padding: 10px 15px;
+
+            font-size: 1rem;
+            font-weight: 600;
+            background-color: #fff;
+            box-shadow: v.$shadow-low;
+
+            cursor: pointer;
+            transition: .3s;
+
+            &:hover {
+                background-color: #eee;
+            }
+        }
+
+        .active {
+            color: #fff;
+            background-color: rgb(76, 76, 249);
+            border: none;
+
+            &:hover {
+                background-color: rgba(76, 76, 249, .8);
+            }
+        }
+    }
+}

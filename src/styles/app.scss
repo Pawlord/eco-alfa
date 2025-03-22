@@ -1,0 +1,22 @@
+@use './variables' as v;
+
+* {
+    font-family: v.$family-mont;
+}
+
+.list-container {
+    width: 80%;
+    margin: 0 auto;
+
+    font-size: 16px;
+    font-family: Arial;
+
+    .list {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(470px, 1fr));
+        grid-template-rows: auto;
+        gap: 2rem;
+
+        list-style: none;
+    }
+}
