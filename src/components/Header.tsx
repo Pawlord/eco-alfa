@@ -8,6 +8,7 @@ import { setFilter } from '@/store/foodSlice';
 // React
 import { useState } from 'react';
 import clsx from 'clsx';
+import { Link } from 'react-router-dom';
 
 export default function Header() {
     const [activeFilter, setActiveFilter] = useState('all');
@@ -15,6 +16,7 @@ export default function Header() {
 
     return (
         <div className="header">
+            <Link to={'/create-product'} className='create-product-link'>Создать</Link>
             <div className="header__filters">
                 <button
                     className={clsx('all-filter filter', activeFilter === 'all' && 'active')}

@@ -2,7 +2,8 @@ export type FoodItem = {
     id: number,
     title: string,
     image: string,
-    imageType: string,
+    imageType?: string,
+    isLocal?: boolean,
 }
 
 export type Like = {

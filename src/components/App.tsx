@@ -2,7 +2,6 @@ import { useEffect } from 'react'
 
 // Компоненты
 import Header from './Header';
-import ListItem from './ListItem';
 
 // Стили
 import '../styles/app.scss';
@@ -13,8 +12,8 @@ import { useAppDispatch, useAppSelector } from '@/store/hook';
 import ProductList from './ProductList';
 import Empty from './Empty';
 
-export const App = () => {
-    const { products, filter, isLoading } = useAppSelector(state => state.food);
+export default function App() {
+    const { products, localProductsDetails, filter, isLoading } = useAppSelector(state => state.food);
     const filteredProducts = filter === 'all'
         ? products
         : products.filter(product => product.like);
@@ -22,13 +21,14 @@ export const App = () => {
     const dispatch = useAppDispatch();
 
     useEffect(() => {
+
         dispatch(fetchFood());
+
     }, [dispatch])
 
     if (isLoading) {
         return <h2>Загрузка...</h2>
     }
-
     return (
         <div>
             <Header />

@@ -1,0 +1,221 @@
+@use './variables' as v;
+
+.create-container {
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+
+    * {
+        box-sizing: border-box;
+    }
+
+    .home-link {
+        position: absolute;
+        left: 10px;
+        top: 10px;
+        text-decoration: none;
+        background-color: #fff;
+        padding: 10px 15px;
+        box-shadow: v.$shadow-low;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: .3s;
+
+        &:hover {
+            background-color: #eee;
+        }
+    }
+
+    .create-window {
+        // min-width: 700px;
+        // max-width: 50%;
+        // min-height: 80vh;
+        // background-color: #fff;
+        // box-shadow: v.$shadow-low;
+        // border-radius: 20px;
+        // padding: 20px;
+
+        width: 50%;
+        min-height: 65vh;
+        background-color: #fff;
+        box-shadow: v.$shadow-low;
+        border-radius: 20px;
+        padding: 20px;
+
+        .create-wrapper {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+
+            .create-form {
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+                align-items: center;
+                width: 100%;
+
+                .input {
+                    border: none;
+                    border-bottom: 1px solid #eee;
+                    width: 80%;
+                    padding: 10px 15px;
+                    outline: none;
+                    font-size: 1.1rem;
+
+                    &:focus {
+                        border-bottom-color: rgb(108, 108, 255);
+                    }
+                }
+
+                .form-button {
+                    padding: 10px 15px;
+                    border: none;
+                    outline: none;
+                    box-shadow: v.$shadow-low;
+                    background-color: #fff;
+                    border-radius: 10px;
+                    transition: .3s;
+                    cursor: pointer;
+
+                    &:hover {
+                        background-color: #eee;
+                    }
+                }
+
+                .editing-block {
+                    margin: 0;
+                    padding: 10px;
+                    border-radius: 10px;
+                    cursor: pointer;
+
+                    &:hover {
+                        outline: 3px solid #eee;
+                    }
+                }
+
+                .input-block {
+                    width: 100%;
+                    position: relative;
+
+                    .error-message {
+                        color: red;
+                        font-size: 12px;
+                        position: absolute;
+                        bottom: -15px;
+                        left: 50%;
+                        transform: translateX(-50%);
+                    }
+                }
+
+                &__title {
+                    text-align: center;
+                }
+
+                &__ingredients,
+                &__diets,
+                &__price,
+                &__time {
+                    width: 100%;
+                    display: flex;
+                    flex-wrap: wrap;
+                    align-items: center;
+                    gap: 10px;
+                }
+
+                &__ingredients {
+
+                    .ingredients-list {
+                        padding: 10px;
+                        border-radius: 10px;
+                        cursor: pointer;
+
+                        &:hover {
+                            outline: 3px solid #eee;
+                        }
+                    }
+                }
+
+                &__instructions {
+                    display: grid;
+                    grid-template-columns: repeat(2, 1fr);
+                    column-gap: 20px;
+
+                    .image {
+                        width: 100%;
+
+                        &__input {
+                            display: none;
+                        }
+
+                        .uploaded-image {
+                            width: 100%;
+                            height: 100%;
+
+                            img {
+                                height: 100%;
+                                width: 100%;
+                                object-fit: cover;
+                                border-radius: 20px;
+                                box-shadow: v.$shadow-low;
+                            }
+
+                        }
+
+                        &__upload-button {
+                            width: 90%;
+                            min-height: 300px;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            border-radius: 15px;
+                            border: 3px dashed #eee;
+                            cursor: pointer;
+
+                            .upload-text {
+                                color: #eee;
+                                font-weight: 600;
+                                font-size: 1.3rem;
+                            }
+                        }
+                    }
+
+                    .instructions {
+                        overflow-wrap: break-word;
+                        word-break: break-word;
+                        max-height: 320px;
+                        padding: 5px;
+
+                        &__list {
+                            margin: 0;
+                            margin-top: 10px;
+                            height: 75%;
+                            list-style: decimal;
+                            overflow-y: auto;
+
+                            li {
+                                padding: 5px;
+                            }
+
+                            ;
+                        }
+                    }
+                }
+
+                .input-error {
+                    border-bottom-color: red;
+                }
+
+                .image-error {
+                    border-color: red;
+                }
+            }
+        }
+    }
+}

@@ -67,16 +67,17 @@
 
     &__title {
         font-weight: 600;
-        height: 15px;
+        height: 20px;
         width: 100%;
-        /* Задайте нужную высоту */
         overflow: hidden;
-        /* Скрывает текст, выходящий за границы блока */
         text-overflow: ellipsis;
-        /* Добавляет многоточие */
         white-space: nowrap;
-        /* Запрещает перенос текста на новую строку */
     }
+}
+
+.list-item-link {
+    text-decoration: none;
+    color: #000;
 }
 
 .list-item:hover {
